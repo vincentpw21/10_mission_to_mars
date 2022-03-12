@@ -44,8 +44,8 @@ news_p
 # 
 
 # %%
-executable_path = {'executable_path': ChromeDriverManager().install()}
-browser = Browser('chrome', **executable_path, headless=False)
+# executable_path = {'executable_path': ChromeDriverManager().install()}
+# browser = Browser('chrome', **executable_path, headless=False)
 
 # %%
 # Visit URL
