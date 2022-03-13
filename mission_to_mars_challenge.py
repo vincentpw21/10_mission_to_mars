@@ -137,7 +137,6 @@ for hemisphere in range (4):
 # %%
 # 4. Print the list that holds the dictionary of each image url and title.
 hemisphere_image_urls
-
 # %%
 # 5. Quit the browser
 browser.quit()
