@@ -89,10 +89,9 @@ def mars_facts():
     df.columns=['Description', 'Mars', 'Earth']
     df.set_index('Description', inplace=True)
 
-    return df.to_html()
+    return df.to_html(classes="table table-striped")
 
-if __name__ == "__main__":
-    print(scrape_all())
+
 
 def hemisphere(browser):
     
@@ -112,6 +111,8 @@ def hemisphere(browser):
         title = hemispheres_soup.find('h2',class_='title').text
         image = hemispheres_soup.find('li').a.get('href')
 
+        temp_images={}
+        temp_titles={}
         #store results in dictionary
         hemispheres = {}
         hemispheres['image_url'] = f"https://marshemispheres.com/{image}"
@@ -119,4 +120,9 @@ def hemisphere(browser):
         hemisphere_image_urls.append(hemispheres)
 
         browser.back()
+        
+        # print(hemisphere_image_urls)
     return hemisphere_image_urls
+
+if __name__ == "__main__":
+    scrape_all()
