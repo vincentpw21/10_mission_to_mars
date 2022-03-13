@@ -1,4 +1,3 @@
-# %% mission_to_mars_challenge
 # ## ARTICLE SCRAPING
 
 # %%
@@ -9,7 +8,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 # %%
 executable_path = {'executable_path': ChromeDriverManager().install()}
-browser = Browser('chrome', **executable_path, headless=False)
+browser = Browser('chrome', **executable_path, headless=True)
 
 # %%
 # Visit the mars nasa news site
@@ -97,6 +96,16 @@ browser.quit()
 # ## Hemispheres
 
 # %%
+# Import Splinter and BeautifulSoup
+from splinter import Browser
+from bs4 import BeautifulSoup as soup
+from webdriver_manager.chrome import ChromeDriverManager
+
+# %%
+executable_path = {'executable_path': ChromeDriverManager().install()}
+browser = Browser('chrome', **executable_path, headless=False)
+
+# %%
 # 1. Use browser to visit the URL 
 url = 'https://marshemispheres.com/'
 
@@ -111,7 +120,7 @@ for hemisphere in range (4):
     browser.links.find_by_partial_text('Hemisphere')[hemisphere].click()
 
     html = browser.html
-    member = soup(html, "html.parser")
+    hemispheres_soup = soup(html, "html.parser")
 
     title = hemispheres_soup.find('h2',class_='title').text
     image = hemispheres_soup.find('li').a.get('href')
