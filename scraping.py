@@ -106,7 +106,7 @@ def hemisphere(browser):
     for hemisphere in range (4):
         browser.links.find_by_partial_text('Hemisphere')[hemisphere].click()
 
-        html = browser.html
+        html = browser.html 
         hemispheres_soup = soup(html, "html.parser")
 
         title = hemispheres_soup.find('h2',class_='title').text
