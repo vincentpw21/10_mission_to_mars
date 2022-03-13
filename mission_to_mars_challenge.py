@@ -95,11 +95,6 @@ browser.quit()
 # %% [markdown]
 # ## Hemispheres
 
-# %%
-# Import Splinter and BeautifulSoup
-from splinter import Browser
-from bs4 import BeautifulSoup as soup
-from webdriver_manager.chrome import ChromeDriverManager
 
 # %%
 executable_path = {'executable_path': ChromeDriverManager().install()}
